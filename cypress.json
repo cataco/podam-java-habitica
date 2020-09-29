@@ -1,0 +1,11 @@
+{
+    "reporter": "mochawesome",
+    "reporterOptions": {
+      "reportDir": "cypress/results",
+      "overwrite": false,
+      "html": true,
+      "json": true
+    },
+    "baseUrl":"https://todoist.com",
+    "chromeWebSecurity": false 
+  }
