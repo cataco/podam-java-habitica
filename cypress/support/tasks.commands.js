@@ -26,6 +26,18 @@ Cypress.Commands.add("addTask", (taskName, dateOption, priority) => {
     cy.get(saveTaskButtonSelector).click();
 });
 
+Cypress.Commands.add("addTaskInProject", (taskName, dateOption, priority) => {
+    cy.get(addTaskButtonSelector).click();
+    cy.get(taskInputSelector).type(taskName);
+    if (dateOption !== "Today") {
+        cy.get(scheduleSelector).click();
+        cy.get(`.scheduler-suggestions-item-label`).contains(dateOption).click();
+    }
+    cy.get(priorityButtonSelector).click();
+    cy.get('.priority_picker_item_name').contains(priority).click();
+    cy.get(saveTaskButtonSelector).click();
+});
+
 Cypress.Commands.add("validateTaskInList", (taskName) => {
     cy.get(`.item_content`).contains("Upcoming").click();
     cy.get(taskWrapperSelector).first().should('have.text', taskName);

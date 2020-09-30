@@ -1,4 +1,4 @@
-context('Todoist Tests - Task and sub-tasks Flow (CRUD)', () => {
+context('Todoist Tests - Task and sub-tasks Flow', () => {
 
 
     before(() => {
