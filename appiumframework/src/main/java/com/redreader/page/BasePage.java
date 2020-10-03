@@ -1,5 +1,6 @@
 package com.redreader.page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -29,27 +30,9 @@ public class BasePage {
             wait.until(ExpectedConditions.visibilityOf(element));
         }
 
-        public void waitInvisibility(WebElement element) {
-            wait.until(ExpectedConditions.invisibilityOf(element));
-        }
+        public void waitExists(By locator) {
+          wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+         }
 
-        public void click (WebElement element) {
-            waitVisibility(element);
-            element.click();
-        }
 
-        public void writeText (WebElement element, String text) {
-            waitVisibility(element);
-            element.sendKeys(text);
-        }
-
-        public String readText (WebElement element) {
-            waitVisibility(element);
-            return element.getText();
-        }
-
-        public void assertEquals (WebElement element, String expectedText) {
-            waitVisibility(element);
-            Assert.assertEquals(readText(element), expectedText);
-        }
 }
