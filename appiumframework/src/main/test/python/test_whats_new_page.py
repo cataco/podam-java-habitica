@@ -28,7 +28,7 @@ class Untitled(unittest.TestCase):
         self.driver.start_recording_screen()
         self.driver.start_recording_screen()
         self.filepath = os.path.join(BASE_DIR,
-                                     "recording/test_whats_new_page" + time.strftime("%Y_%m_%d_%H%M%S") + ".mp4")
+                                     "python/recording/test_whats_new_page" + time.strftime("%Y_%m_%d_%H%M%S") + ".mp4")
 
     def test_whats_new_page(self):
         self.driver.find_element_by_id('android:id/button2').click()

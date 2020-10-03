@@ -28,7 +28,7 @@ class Untitled(unittest.TestCase):
         self.driver.start_recording_screen()
         self.driver.start_recording_screen()
         self.filepath = os.path.join(BASE_DIR,
-                                     "recording/test_login_text" + time.strftime("%Y_%m_%d_%H%M%S") + ".mp4")
+                                     "python/recording/test_login_text" + time.strftime("%Y_%m_%d_%H%M%S") + ".mp4")
 
     def test_login_text(self):
         element = self.driver.find_element_by_id('android:id/message')

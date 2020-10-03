@@ -30,7 +30,7 @@ class Untitled(unittest.TestCase):
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', self.dc)
         self.driver.start_recording_screen()
         self.filepath = os.path.join(BASE_DIR,
-                                     "recording/test_order_about_menu" + time.strftime("%Y_%m_%d_%H%M%S") + ".mp4")
+                                     "python/recording/test_order_about_menu" + time.strftime("%Y_%m_%d_%H%M%S") + ".mp4")
 
     def test_order_about_menu(self):
         self.driver.find_element_by_id('android:id/button2').click()
