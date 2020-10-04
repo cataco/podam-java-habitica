@@ -35,7 +35,7 @@ public class RedReaderTests {
     dc.setCapability("reportFormat", reportFormat);
     dc.setCapability("testName", testName);
     dc.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-    dc.setCapability(MobileCapabilityType.APP, "/Users/ccordob/Downloads/RedReader-limpia.apk");
+    dc.setCapability(MobileCapabilityType.APP, "/Users/ccordob/Downloads/RedReader-modificada.apk");
     dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "org.quantumbadger.redreader");
     dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".activities.MainActivity");
     driver = new AndroidDriver<>(dc);
@@ -71,14 +71,14 @@ public class RedReaderTests {
   @Test
   public void validateFrontPageNavigation() {
     driver.findElement(By.xpath("//*[@text='Front Page']")).click();
-    Assert.assertTrue(driver.findElement(By.xpath("//*[@text='reddit.com/hot']")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("//*[@text='Front Page']")).isDisplayed());
     driver.findElement(By.id("org.quantumbadger.redreader:id/actionbar_title_back_image")).click();
   }
 
   @Test
   public void validateSubredditsNavigation() {
     driver.findElement(By.xpath("//*[@text='All Subreddits']")).click();
-    Assert.assertTrue(driver.findElement(By.xpath("//*[@text='reddit.com/r/all/hot']")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("//*[@text='All Subreddits']")).isDisplayed());
     driver.findElement(By.id("org.quantumbadger.redreader:id/actionbar_title_back_image")).click();
   }
 
