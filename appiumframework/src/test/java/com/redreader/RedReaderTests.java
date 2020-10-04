@@ -11,6 +11,7 @@ import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -71,6 +72,8 @@ public class RedReaderTests {
   @Test
   public void validateFrontPageNavigation() {
     driver.findElement(By.xpath("//*[@text='Front Page']")).click();
+    ByXPath byXPath = new ByXPath("//*[@text='reddit.com/hot']");
+    basePage.waitExists(byXPath);
     Assert.assertTrue(driver.findElement(By.xpath("//*[@text='Front Page']")).isDisplayed());
     driver.findElement(By.id("org.quantumbadger.redreader:id/actionbar_title_back_image")).click();
   }
