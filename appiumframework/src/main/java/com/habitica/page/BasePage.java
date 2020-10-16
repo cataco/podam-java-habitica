@@ -1,4 +1,4 @@
-package com.redreader.page;
+package com.habitica.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
